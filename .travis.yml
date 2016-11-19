@@ -13,8 +13,13 @@ matrix:
     - php: 7.0
 
 before_script:
+  - nvm install node
+  - nvm alias default node
   - composer install
+  - npm install
   - cd app
 
 script:
   - phpunit
+  - cd ..
+  - npm test
