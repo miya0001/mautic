@@ -2,6 +2,9 @@
   "name": "mautic",
   "version": "0.0.0",
   "description": "Mautic Open Source Distribution",
+  "scripts": {
+    "start": "/usr/bin/env bash tests/run-mautic.sh"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^1.0.1",
