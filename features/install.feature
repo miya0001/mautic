@@ -2,6 +2,7 @@ Feature: Install Mautic
 
   @install
   Scenario: Install Mautic
+    Given the screen size is 1440x900
 
     When I am on "/"
     Then I am on "/installer"

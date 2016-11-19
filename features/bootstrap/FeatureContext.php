@@ -21,6 +21,21 @@ class FeatureContext extends RawMinkContext
     }
 
     /**
+     * Change the screen size.
+     * Example: Given the screen size is 1440x900.
+     *
+     * @param int $width  The screen width
+     * @param int $height The screen height
+     * @Given /^the screen size is (?P<width>[0-9]+)x(?P<height>[0-9]+)/
+     */
+    public function set_window_size($width, $height)
+    {
+        $width  = $this->replace_variables($width);
+        $height = $this->replace_variables($height);
+        $this->getSession()->getDriver()->resizeWindow($width, $height, 'current');
+    }
+
+    /**
      * Wait for specific seconds.
      * Example:
      * * When I wait for 5 seconds
