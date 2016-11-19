@@ -19,5 +19,5 @@ phantomjs.run(
       exec( 'pgrep -f "router.php" | xargs kill' );
       process.exit( code );
     } )
-  }, 5000 )
+  }, 10000 )
 } )
