@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "Mautic Open Source Distribution",
   "scripts": {
-    "start": "/usr/bin/env bash tests/run-mautic.sh"
+    "start-mautic": "/usr/bin/env bash tests/run-mautic.sh",
+    "test": "/usr/bin/env node tests/run-tests.js"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -13,6 +14,7 @@
     "grunt-contrib-less": "^0.11.4",
     "grunt-contrib-watch": "^0.6.1",
     "load-grunt-tasks": "^0.6.0",
+    "phantomjs-prebuilt": "^2.1.13",
     "time-grunt": "^1.0.0"
   }
 }

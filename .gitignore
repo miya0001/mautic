@@ -44,3 +44,6 @@
 /media/dashboards/*
 !/media/dashboards/*.json
 /php.ini
+/router.php
+/behat.yml
+/tests/screenshot/*.png
