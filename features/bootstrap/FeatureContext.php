@@ -30,8 +30,6 @@ class FeatureContext extends RawMinkContext
      */
     public function set_window_size($width, $height)
     {
-        $width  = $this->replace_variables($width);
-        $height = $this->replace_variables($height);
         $this->getSession()->getDriver()->resizeWindow($width, $height, 'current');
     }
 
