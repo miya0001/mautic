@@ -11,9 +11,13 @@ phantomjs.run(
   '--ignore-ssl-errors=yes',
   '--cookies-file=/tmp/webdriver_cookie.txt'
 ).then( program => {
-  const behat = spawn( 'bin/behat', argv, { stdio: "inherit" } )
-  behat.on( 'exit', ( code ) => {
-    program.kill()
-    process.exit( code );
-  } )
+  const mautic = spawn( 'npm', ["run", "start-mautic"], { stdio: "ignore" } )
+  setTimeout( function() {
+    const behat = spawn( 'bin/behat', argv, { stdio: "inherit" } )
+    behat.on( 'exit', ( code ) => {
+      program.kill()
+      exec( 'pgrep -f "router.php" | xargs kill' );
+      process.exit( code );
+    } )
+  }, 5000 )
 } )

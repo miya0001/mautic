@@ -6,11 +6,9 @@ Feature: Install Mautic
 
     When I am on "/"
     Then I am on "/installer"
-    And I should see "Mautic Installation - Environment Check"
 
     When I press "Next Step"
     Then I am on "/installer/step/1"
-    And I should see "Mautic Installation - Database Setup"
 
     When I fill in the following:
       |install_doctrine_step[backup_tables] |0           |
